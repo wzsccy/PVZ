@@ -1,0 +1,89 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\unity\u5DE5\u7A0B\\PVZ\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8D1B3D4D-8A3E-A4B1-6E92-ADE36A86719F}|Assembly-CSharp.csproj|d:\\unity\u5DE5\u7A0B\\pvz\\assets\\scripts\\manager\\handmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D1B3D4D-8A3E-A4B1-6E92-ADE36A86719F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\handmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D1B3D4D-8A3E-A4B1-6E92-ADE36A86719F}|Assembly-CSharp.csproj|D:\\unity\u5DE5\u7A0B\\PVZ\\assets\\scripts\\manager\\sunmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D1B3D4D-8A3E-A4B1-6E92-ADE36A86719F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\sunmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D1B3D4D-8A3E-A4B1-6E92-ADE36A86719F}|Assembly-CSharp.csproj|d:\\unity\u5DE5\u7A0B\\pvz\\assets\\scripts\\plant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D1B3D4D-8A3E-A4B1-6E92-ADE36A86719F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\plant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D1B3D4D-8A3E-A4B1-6E92-ADE36A86719F}|Assembly-CSharp.csproj|D:\\unity\u5DE5\u7A0B\\PVZ\\assets\\scripts\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D1B3D4D-8A3E-A4B1-6E92-ADE36A86719F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Card.cs",
+              "DocumentMoniker": "D:\\unity\u5DE5\u7A0B\\PVZ\\Assets\\Scripts\\Card.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Card.cs",
+              "ToolTip": "D:\\unity\u5DE5\u7A0B\\PVZ\\Assets\\Scripts\\Card.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Card.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T03:33:51.5Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HandManager.cs",
+              "DocumentMoniker": "D:\\unity\u5DE5\u7A0B\\PVZ\\Assets\\Scripts\\Manager\\HandManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\HandManager.cs",
+              "ToolTip": "D:\\unity\u5DE5\u7A0B\\PVZ\\Assets\\Scripts\\Manager\\HandManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\HandManager.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAUwCcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T16:01:20.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Plant.cs",
+              "DocumentMoniker": "D:\\unity\u5DE5\u7A0B\\PVZ\\Assets\\Scripts\\Plant.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Plant.cs",
+              "ToolTip": "D:\\unity\u5DE5\u7A0B\\PVZ\\Assets\\Scripts\\Plant.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Plant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T15:49:41.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SunManager.cs",
+              "DocumentMoniker": "D:\\unity\u5DE5\u7A0B\\PVZ\\Assets\\Scripts\\Manager\\SunManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\SunManager.cs",
+              "ToolTip": "D:\\unity\u5DE5\u7A0B\\PVZ\\Assets\\Scripts\\Manager\\SunManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\SunManager.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAIwB8AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T04:04:29.348Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

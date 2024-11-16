@@ -1,0 +1,46 @@
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class HandManager : MonoBehaviour
+{
+    public static HandManager Instance { get; private set; }
+    public List<Plant> plantPrefabsList;
+    private Plant currentPlant;
+    private void Awake()
+    {
+        Instance = this;
+    }
+    private void Update()
+    {
+        FollowCuesor();
+    }
+    public void AddPlant(PlantType plantType )
+    {
+        Plant plantPrefab = GetPlantPrefabs(plantType);
+        if (plantPrefab==null)
+        {
+            print("要种植的植物不存在");return;
+        }
+        currentPlant=GameObject.Instantiate(plantPrefab);
+    }
+    private Plant GetPlantPrefabs(PlantType plantType)
+    {
+        foreach (Plant plant in plantPrefabsList)
+        {
+            if(plant.plantType == plantType)
+                return plant;
+        }
+        return null;
+    }
+    void FollowCuesor()
+    {
+        if (currentPlant == null) return;
+        Vector3 mouseWorldPostion= Camera.main.ScreenToWorldPoint(Input.mousePosition);//将屏幕坐标转换成世界坐标
+        mouseWorldPostion.z = 0;
+        currentPlant.transform.position = mouseWorldPostion;//把鼠标的位置给植物的位置
+    }
+
+}
