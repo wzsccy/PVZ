@@ -17,20 +17,22 @@ public class HandManager : MonoBehaviour
     {
         FollowCuesor();
     }
-    public void AddPlant(PlantType plantType )
+    public bool AddPlant(PlantType plantType)
     {
+        if (currentPlant != null) return false;
         Plant plantPrefab = GetPlantPrefabs(plantType);
-        if (plantPrefab==null)
+        if (plantPrefab == null)
         {
-            print("要种植的植物不存在");return;
+            print("要种植的植物不存在"); return false;
         }
-        currentPlant=GameObject.Instantiate(plantPrefab);
+        currentPlant = GameObject.Instantiate(plantPrefab);
+        return true;
     }
     private Plant GetPlantPrefabs(PlantType plantType)
     {
         foreach (Plant plant in plantPrefabsList)
         {
-            if(plant.plantType == plantType)
+            if (plant.plantType == plantType)
                 return plant;
         }
         return null;
@@ -38,9 +40,17 @@ public class HandManager : MonoBehaviour
     void FollowCuesor()
     {
         if (currentPlant == null) return;
-        Vector3 mouseWorldPostion= Camera.main.ScreenToWorldPoint(Input.mousePosition);//将屏幕坐标转换成世界坐标
+        Vector3 mouseWorldPostion = Camera.main.ScreenToWorldPoint(Input.mousePosition);//将屏幕坐标转换成世界坐标
         mouseWorldPostion.z = 0;
         currentPlant.transform.position = mouseWorldPostion;//把鼠标的位置给植物的位置
     }
-
+    public void OnCellClick(Cell cell)
+    {
+        if (currentPlant == null) return;
+        bool isSucess = cell.AddPlant(currentPlant);
+        if (isSucess)
+        {
+            currentPlant = null;
+        }
+    }
 }

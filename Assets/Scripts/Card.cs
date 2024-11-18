@@ -1,10 +1,11 @@
-using System;
-using Unity.VisualScripting;
+//using System;
+//using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 enum CardState
 {
+    Disable,
     Cooling,
     WaitingSun,
     Ready
@@ -17,16 +18,16 @@ public enum PlantType
 public class Card : MonoBehaviour
 {
     //冷却 可以被点击 阳光不够不可用
-    private CardState cardState=CardState.Cooling;
+    private CardState cardState = CardState.Disable;
     public PlantType plantType = PlantType.SunFlower;
     public GameObject cardLight;
     public GameObject cardGray;
     public Image cardMask;
     [SerializeField]
-    private float cdTime=2;//冷却时间
-    private float cdTimer=0;//计时器
+    private float cdTime = 2;//冷却时间
+    private float cdTimer = 0;//计时器
     [SerializeField]
-    private int needSunPoint=50;
+    private int needSunPoint = 50;
 
 
     private void Update()
@@ -50,7 +51,7 @@ public class Card : MonoBehaviour
     private void CoolingUpdate()
     {
         cdTimer += Time.deltaTime;//增量时间保证时间每秒都会增加
-        cardMask.fillAmount=(cdTime - cdTimer) / cdTime;//fillAmount显示剩余时间的比例
+        cardMask.fillAmount = (cdTime - cdTimer) / cdTime;//fillAmount显示剩余时间的比例
         if (cdTimer >= cdTime)
         {
             TransitionToWaitingSun();
@@ -92,8 +93,19 @@ public class Card : MonoBehaviour
     {
         if (needSunPoint > SunManager.instance.SunPoint) return;
         //消耗阳光值，并进行种植
-        HandManager.Instance.AddPlant(plantType);
-        SunManager.instance.SubSun(needSunPoint);
+        bool isSuccess = HandManager.Instance.AddPlant(plantType);
+        if (isSuccess)
+        {
+            SunManager.instance.SubSun(needSunPoint);
+            TransitionToCooling();
+        }
+    }
+    public void DisableCard()
+    {
+        cardState = CardState.Disable;
+    }
+    public void EnableCard()
+    {
         TransitionToCooling();
     }
 }
