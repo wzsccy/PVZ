@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plant
   - Zombie
+  - House
   layers:
   - Default
   - TransparentFX

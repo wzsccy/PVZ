@@ -12,9 +12,10 @@ public class CardListUI : MonoBehaviour
     }
     public void ShowCardList()
     {
-        GetComponent<RectTransform>().DOAnchorPosY(448f,1f);
+        GetComponent<RectTransform>().DOAnchorPosY(448f,6f);
+        EnableCardList();
     }
-    void DisableCardList()
+    public void DisableCardList()
     {
         foreach (Card card in cards)
         {

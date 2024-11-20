@@ -39,7 +39,10 @@ public class SunManager : MonoBehaviour
     {
         isStartProduce = true;
     }
-
+    public void StopProduce()
+    {
+        isStartProduce = false;
+    }
     void ProduceSun()
     {
         produceTimer += Time.deltaTime;

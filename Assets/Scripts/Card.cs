@@ -91,6 +91,8 @@ public class Card : MonoBehaviour
     }
     public void OnClick()
     {
+        AudioManager.Instance.PlayClip(Config.btn_click);
+        if (cardState == CardState.Disable) return;
         if (needSunPoint > SunManager.instance.SunPoint) return;
         //消耗阳光值，并进行种植
         bool isSuccess = HandManager.Instance.AddPlant(plantType);

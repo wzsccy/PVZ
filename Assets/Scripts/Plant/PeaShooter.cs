@@ -24,5 +24,6 @@ public class PeaShooter : Plant
         PeaBullet pb= GameObject.Instantiate(peaBulletPrefab,ShootPointTransform.position,Quaternion.identity);
         pb.SetSpeed(bulletSpeed);
         pb.SetAtkValue(atkValue);
+        AudioManager.Instance.PlayClip(Config.shoot);
     }
 }
