@@ -18,7 +18,7 @@ public class PeaBullet : MonoBehaviour
     }
     private void Start()
     {
-        Destroy(this.gameObject,8);
+        Destroy(this.gameObject,2.4f);
     }
     private void Update()
     {

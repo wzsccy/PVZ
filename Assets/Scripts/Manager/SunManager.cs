@@ -1,7 +1,7 @@
 
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem.iOS;
+//using UnityEngine.InputSystem.iOS;
 public class SunManager : MonoBehaviour
 {
     public static SunManager instance { get; private set; }//通过类访问，而不需要通过实例化访问

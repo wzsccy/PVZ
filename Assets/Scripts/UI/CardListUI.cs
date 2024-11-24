@@ -8,11 +8,11 @@ public class CardListUI : MonoBehaviour
     private void Start()
     {
         DisableCardList();
-        ShowCardList();
+       // ShowCardList();
     }
     public void ShowCardList()
     {
-        GetComponent<RectTransform>().DOAnchorPosY(448f,6f);
+        GetComponent<RectTransform>().DOAnchorPosY(448f,1f);
         EnableCardList();
     }
     public void DisableCardList()

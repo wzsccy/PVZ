@@ -17,7 +17,7 @@ public class ZombieManager : MonoBehaviour
 
     public Transform[] spawnPointList;
     public GameObject zombiePrefab;
-
+    [SerializeField]
     private List<Zombie> zombieList = new List<Zombie>();
 
     private void Awake()
@@ -27,7 +27,7 @@ public class ZombieManager : MonoBehaviour
 
     private void Start()
     {
-        StartSpawn();
+        //StartSpawn();
     }
     public void Pause()
     {

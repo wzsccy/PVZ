@@ -1,7 +1,5 @@
-using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class HandManager : MonoBehaviour
@@ -9,6 +7,8 @@ public class HandManager : MonoBehaviour
     public static HandManager Instance { get; private set; }
     public List<Plant> plantPrefabsList;
     private Plant currentPlant;
+    [SerializeField]
+    private List<Plant> plants=new List<Plant>();
     private void Awake()
     {
         Instance = this;
@@ -26,6 +26,7 @@ public class HandManager : MonoBehaviour
             print("要种植的植物不存在"); return false;
         }
         currentPlant = GameObject.Instantiate(plantPrefab);
+        plants.Add(currentPlant.GetComponent<Plant>());
         return true;
     }
     private Plant GetPlantPrefabs(PlantType plantType)
@@ -53,5 +54,17 @@ public class HandManager : MonoBehaviour
             currentPlant = null;
             AudioManager.Instance.PlayClip(Config.plant);
         }
+    }
+    public void TrantionToPause()
+    {
+
+        foreach (Plant plant in plants)
+        {
+            if (GameManager.instance.IsGameEnd == true)
+            {
+                plant.TranstionToDisable();
+            }
+        }
+
     }
 }

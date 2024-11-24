@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FailUI : MonoBehaviour
 {
@@ -19,4 +21,10 @@ public class FailUI : MonoBehaviour
     {
         anim.enabled=true;
     }
+    //IEnumerable Renew()
+    //{
+    //    show();
+    //    yield return new WaitForSeconds(3);
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+    //}
 }

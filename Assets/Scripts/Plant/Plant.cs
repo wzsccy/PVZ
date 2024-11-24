@@ -2,13 +2,19 @@ using UnityEngine;
 enum PlantState
 {
     Disable,
-    Enable
+    Enable,
+    Pause
 }
 public class Plant : MonoBehaviour
 {
+    public static Plant instance { get; private set; }
     PlantState plantState = PlantState.Disable;
     public PlantType plantType = PlantType.SunFlower;
     public int HP = 100;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         TranstionToDisable();
@@ -33,9 +39,10 @@ public class Plant : MonoBehaviour
     }
     protected virtual void EnableUpdate()
     {
-
+        
     }
-    void TranstionToDisable()
+    
+    public void TranstionToDisable()
     {
         plantState = PlantState.Disable;
         GetComponent<Animator>().enabled = false;//植物在选中的情况下不会做动作

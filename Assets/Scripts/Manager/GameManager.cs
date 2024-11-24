@@ -1,5 +1,8 @@
 using DG.Tweening;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public PrepareUI prepareUI;
     public CardListUI cardListUI;
-    private bool IsGameEnd = false;
+    public bool IsGameEnd = false;
     public FailUI failUI;
     public WinUI winUI;
 
@@ -25,6 +28,18 @@ public class GameManager : MonoBehaviour
         Camera.main.transform.DOPath(new Vector3[] { currentPostion, new Vector3(5,0,-10),currentPostion },3,PathType.Linear).OnComplete(OnCameraMoveComplete);
             
     }
+    private void Update()
+    {
+        if (IsGameEnd == true)
+            StartCoroutine(Renew());
+    }
+    IEnumerator Renew()
+    {
+        GameEndSuccess();
+        GameEndFail();
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+    }
 
     public void GameEndFail()
     {
@@ -32,9 +47,11 @@ public class GameManager : MonoBehaviour
         IsGameEnd = true;
         failUI.show();
         ZombieManager.instance.Pause();
+        HandManager.Instance.TrantionToPause();
         cardListUI.DisableCardList();
         SunManager.instance.StopProduce();
         AudioManager.Instance.PlayClip(Config.lose_music);
+       
     }
     public void GameEndSuccess()
     {
@@ -42,6 +59,7 @@ public class GameManager : MonoBehaviour
         IsGameEnd = true;
         winUI.Show();
         cardListUI.DisableCardList();
+        HandManager.Instance.TrantionToPause();
         SunManager.instance.StopProduce();
         AudioManager.Instance.PlayClip(Config.win_music);
     }
@@ -57,5 +75,5 @@ public class GameManager : MonoBehaviour
         cardListUI.ShowCardList();
         AudioManager.Instance.PlayBgm(Config.bgm1);
     }
-
+    
 }
